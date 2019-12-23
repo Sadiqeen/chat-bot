@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateIslamicPrayTimeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('air_pollution_users', function (Blueprint $table) {
+        Schema::create('islamic_pray_time', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('city');
             $table->integer('notification')->default('1');
-            $table->string('location_id');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('islamic_pray_time');
     }
 }

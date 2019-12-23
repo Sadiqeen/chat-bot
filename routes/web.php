@@ -28,7 +28,20 @@ $router->group(['prefix' => 'air'], function () use ($router) {
 
 });
 
+// Pray time
+$router->group(['prefix' => 'pray'], function () use ($router) {
+
+    $router->post('hooks', [
+        'as' => 'pray_hooks', 'uses' => 'IslamicPrayTime\LineController@hook'
+    ]);
+
+    $router->get('pushMessage/{token}', [
+        'as' => 'pray_pushMessage', 'uses' => 'IslamicPrayTime\LineController@notification_to_all_user'
+    ]);
+
+});
+
 // Test part
-$router->get('test/{user_id}', [
-    'as' => 'hooksxx', 'uses' => 'AirPollution\AirController@get_air_quality'
-]);
+// $router->get('test', [
+//     'as' => 'hooksxx', 'uses' => 'IslamicPrayTime\PrayController@test'
+// ]);

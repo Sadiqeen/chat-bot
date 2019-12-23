@@ -9,7 +9,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/lumen-framework": "5.8.*",
         "league/flysystem": "^1.0",
-        "linecorp/line-bot-sdk": "^3.13"
+        "linecorp/line-bot-sdk": "^3.13",
+        "opencage/geocode": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",
